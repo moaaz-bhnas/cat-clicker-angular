@@ -343,7 +343,7 @@ form:valid button:hover {
     
     section.selected,
     section.addition {
-        width: 50%;
+        flex-basis: 50%;
     }
     
     .selected img {

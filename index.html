@@ -10,7 +10,7 @@
     <script src="js/lib/angular.min.js"></script>
     <script src="js/app.js"></script>
 </head>
-<body ng-controller="catAppController" style="background-color: {{currentCat.color}}; color: {{currentCat.color}}">
+<body ng-controller="catAppController" style="background-color: {{currentCat.color}}; color: {{currentCat.color}};">
    
     <section class="selection-list" ng-style="padding">
         <ul>
@@ -21,11 +21,11 @@
         </ul> <!-- Cats List -->
     </section>
         
-    <scetion class="selected" ng-class="{'fade-out': faded}">
+    <section class="selected" ng-class="{'fade-out': faded}">
         <div class="clicks" ng-class="{'show-clicks': clicksVisible}">{{currentCat.clicksCount}}</div>
         <h2 class="name">{{currentCat.name}}</h2>
         <img alt="Cat" ng-src="{{currentCat.src}}" ng-click="incrementClicks()">
-    </scetion> <!-- Selected Cat -->
+    </section> <!-- Selected Cat -->
             
     <section class="addition">
         <i class="add fa fa-plus" ng-class="{move: plusMoved}" title="Add new cat" ng-click="toggleForm()"></i>

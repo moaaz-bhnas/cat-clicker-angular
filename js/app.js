@@ -157,3 +157,5 @@ catApp.controller('catAppController', ['$scope', '$timeout', '$http', function($
         $scope.msgVisible = false;
     }
 }]);
+
+
