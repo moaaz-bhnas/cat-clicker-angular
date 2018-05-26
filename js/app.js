@@ -124,14 +124,16 @@ catApp.controller('catAppController', ['$scope', '$timeout', '$http', function($
     
     /* Select --- */
     $scope.select = function(cat) {
-        $scope.faded = true; // Fade Out
-        
-        // After the transition duration ends
-        $timeout(function() {
-            $scope.currentCat = cat;
-            
-            $scope.faded = false; // Fade In
-        }, fadingDuration)
+        if ($scope.currentCat !== cat) {
+            $scope.faded = true; // Fade Out
+
+            // After the transition duration ends
+            $timeout(function() {
+                $scope.currentCat = cat;
+
+                $scope.faded = false; // Fade In
+            }, fadingDuration);
+        }
     }
     
     /* Increment Clicks Count --- */
