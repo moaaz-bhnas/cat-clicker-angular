@@ -12,7 +12,6 @@
 </head>
 <body ng-controller="catAppController" style="background-color: {{currentCat.color}}; color: {{currentCat.color}}">
    
-<<<<<<< HEAD
     <section class="selection-list" ng-style="padding">
         <ul>
             <li ng-repeat="cat in cats" style="color: {{cat.color}}"> 
@@ -50,39 +49,5 @@
             <button style="background-color: {{currentCat.color}}" type="submit">add new cat</button>
         </form>
     </section>
-=======
-    <div class="cat-and-add">
-        <div class="cat">
-            <div class="clicks-record"></div>
-            <h2 class="name"></h2>
-            <img class="cat-image">
-        </div>
-
-        <div class="plus-and-form">
-            <span class="add fa fa-plus" title="Add new cat"></span>
-
-            <form class="add-cat">
-                <input class="new-cat-name" type="text" placeholder="cat name" required>
-                <input class="new-cat-src" type="text" placeholder="cat image url" required>
-                <input class="new-cat-color" type="text" placeholder="color (any color format)">
-                <small>
-                    <i>(Optional) if not specified, a 
-                        <span class="random">
-                            <span class="r">r</span>
-                            <span class="a">a</span>
-                            <span class="n">n</span>
-                            <span class="d">d</span>
-                            <span class="o">o</span>
-                            <span class="m">m</span>
-                        </span>
-                    color will be used.</i> 
-                </small>
-                <button type="submit">add new cat</button>
-            </form>
-        </div>
-    </div>
-    
-    <script src="js/app.js"></script>
->>>>>>> c2f391a779de04a08dd4dc99d74fc6bae9a84d48
 </body>
 </html>
