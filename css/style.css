@@ -227,10 +227,14 @@ form {
     font-family: inherit;
     color: inherit;
     
-    margin-bottom: .4em;
     padding: .25em;
+    margin-bottom: .1em;
     border: 2px solid;
     border-radius: .5rem;
+}
+
+input:not(:first-child) {
+    margin-top: .3em;
 }
 
 /* --- Optional color msg --- */
@@ -242,7 +246,11 @@ small {
     transition: max-height .45s;
 }
 
-.show-msg {
+.show-color-msg {
+    max-height: 70px;
+}
+
+.show-img-msg {
     max-height: 70px;
 }
 
@@ -278,7 +286,7 @@ small {
     color: #fff;
     background-color: #777;
     padding: .3em .6em;
-    margin-top: .25em;
+    margin-top: .7em;
     border: none;
     border-radius: .6rem;
     
@@ -359,7 +367,8 @@ form:valid button:hover {
     }
     .addition input {
         font-size: .8rem;
-        margin-bottom: .5em;
+    }
+    input:not(:first-child) {
     }
     .addition button {
         font-size: 1rem;

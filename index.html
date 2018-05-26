@@ -32,9 +32,12 @@
        
         <form ng-class="{'pop-up': formVisible}" ng-submit="add()">
             <input class="name" type="text" placeholder="cat name" ng-model="newCat.name" required>
-            <input class="src" type="text" placeholder="cat image url" ng-model="newCat.src" required>
-            <input class="color" type="text" placeholder="color (any color format)" ng-model="newCat.color" style="color: {{newCat.color}}" ng-focus="showMsg()" ng-blur="hideMsg()">
-            <small ng-class="{'show-msg': msgVisible}">
+            <input class="src" type="text" placeholder="cat image url" ng-model="newCat.src" ng-focus="showImgMsg()" ng-blur="hideImgMsg()" required>
+            <small ng-class="{'show-img-msg': imgMsgVisible}">
+                <i>For better result, choose a (.png) image format</i>
+            </small>
+            <input class="color" type="text" placeholder="color (any color format)" ng-model="newCat.color" style="color: {{newCat.color}}" ng-focus="showColorMsg()" ng-blur="hideColorMsg()">
+            <small ng-class="{'show-color-msg': colorMsgVisible}">
                 <i>(Optional) if not specified, a 
                     <span class="random">
                         <span class="r">r</span>

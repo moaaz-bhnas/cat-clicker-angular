@@ -147,14 +147,25 @@ catApp.controller('catAppController', ['$scope', '$timeout', '$http', function($
         $scope.plusMoved = ($scope.plusMoved) ? false : true;
     }
     
-    /* Show Message --- */
-    $scope.showMsg = function() {
-        $scope.msgVisible = true;
+    /* Show Color Message --- */
+    $scope.showColorMsg = function() {
+        $scope.colorMsgVisible = true;
     }
     
-    /* Hide Message --- */
-    $scope.hideMsg = function() {
-        $scope.msgVisible = false;
+    /* Hide Color Message --- */
+    $scope.hideColorMsg = function() {
+        $scope.colorMsgVisible = false;
+    }
+    
+    /* Show Image Message --- */
+    $scope.showImgMsg = function() {
+        console.log('test');
+        $scope.imgMsgVisible = true;
+    }
+    
+    /* Hide Image Message --- */
+    $scope.hideImgMsg = function() {
+        $scope.imgMsgVisible = false;
     }
 }]);
 
