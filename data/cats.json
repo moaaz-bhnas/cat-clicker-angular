@@ -1,0 +1,26 @@
+[{
+	"name": "Tom",
+	"src": "images/tom.png",
+	"color": "#90979F",
+	"clicksCount": 0
+}, {
+	"name": "Garfield",
+	"src": "images/garfield.png",
+	"color": "#FCAA16",
+	"clicksCount": 0
+}, {
+	"name": "Marie",
+	"src": "images/marie.png",
+	"color": "#F06594",
+	"clicksCount": 0
+}, {
+	"name": "Meowth",
+	"src": "images/meowth.png",
+	"color": "#DF7645",
+	"clicksCount": 0
+}, {
+	"name": "Sylvester",
+	"src": "images/sylvester.png",
+	"color": "#1F2831",
+	"clicksCount": 0
+}]

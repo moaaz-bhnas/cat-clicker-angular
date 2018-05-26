@@ -1,0 +1,376 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rammetto One', cursive;
+    margin: 0;
+    min-height: 100vh;
+    color: #777;
+    background: url(../images/paws.jpg) no-repeat center / cover;
+    background-blend-mode: luminosity;
+    /*hard-light / lighten / luminosity*/
+    
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    
+    transition: background-color .3s;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+
+section.selection,
+section.addition {
+    color: inherit;
+}
+
+/* ==============================================
+    Selection List 
+================================================= */
+.selection-list {
+    background-color: rgba(255, 255, 255, .7);
+    padding: .5em;
+    margin-bottom: .5em;
+    
+    transition: background-color, padding;
+    transition-duration: .3s;
+}
+
+.selection-list ul {
+    display: flex;
+/*    flex-direction: column;*/
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.selection-list:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* --- Cat li --- */
+.selection-list li {
+    font-size: 1.2rem;
+    padding: 0 .5em;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- Cat Name --- */
+.selection-list .name {
+    padding: .3em .45em .3em 0;
+    border-bottom: 0.1em solid transparent;
+    
+    transition-property: border-bottom;
+    transition-duration: .3s;
+    
+    cursor: pointer;
+}
+
+.selection-list .name:hover {
+    border-bottom: 0.1em solid;
+}
+
+/* --- Cat Remove --- */
+.selection-list .remove {
+    padding: .1em;
+    
+    cursor: pointer;
+    
+    transition: transform .2s;
+}
+
+.selection-list .remove:hover {
+    transform: rotate(180deg);
+}
+
+/* ================================
+    Selected Cat
+=================================== */
+.selected {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+            
+    transition: opacity .2s;    
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+/* --- Clicks --- */
+.clicks {
+    font-size: 1.8rem;
+    background-color: rgba(255, 255, 255, .9);
+    border: 0.063em solid;
+    box-shadow: 5px 5px;
+    border-radius: 1.2em;
+    
+    line-height: 1;
+    padding: .5em;
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-clicks {
+    display: flex;
+}
+
+/* --- Cats names --- */
+.selected .name {
+    font-size: 1.2rem;
+    margin: 1.2em 0 .4em;
+}
+
+/* --- Cats Images --- */
+.selected img {
+    width: 100%;
+    max-width: 18rem;
+    max-height: 12rem;
+    object-fit: contain;
+    border: 0.05em solid transparent;
+    border-radius: 2em;
+    
+    transition-property: background-color, border, box-shadow;
+    transition-duration: .4s;
+    
+    cursor: pointer;
+}
+
+.selected img:hover {
+    background-color: rgba(255, 255, 255, .8);
+    border: 0.05em solid #d9e4ea;
+    box-shadow: 2px 2px 10px #d9e4ea;
+}
+
+/* ================================
+    Addition
+=================================== */
+.addition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+}
+
+/* ================================
+    Add Plus sign 
+=================================== */
+.add {
+    font-size: 2.5rem;
+    line-height: .8;
+    
+    background-color: #fff;
+    padding: .15em;
+    border: 4px solid;
+    border-radius: 50%;
+    
+    opacity: .8;
+    z-index: 1;
+    
+    cursor: pointer;
+    
+    position: absolute;
+    
+    transition-property: color, transform, opacity;
+    transition-duration: .3s;
+}
+
+.move {
+/*    transition-timing-function: cubic-bezier(.48,1.46,.68,1);*/
+    transform: translate(-6.7rem, -5.2rem);
+}
+
+.add:hover {
+    opacity: 1;
+}
+
+/* ================================
+    Add Form 
+=================================== */
+form {
+    background-color: #fff;
+    max-width: 13.6rem;
+    padding: .5rem;
+    border: 3px solid;
+    border-radius: .9rem;
+    
+    display: flex;
+    flex-direction: column;
+    
+    transform: scale(0);
+    transition-property: color, transform;
+    transition-duration: .3s;
+}
+
+.pop-up {
+/*    transition-timing-function: cubic-bezier(.48,1.46,.68,1);*/
+    transform: scale(1);
+}
+
+.addition input {
+    font-family: inherit;
+    color: inherit;
+    
+    margin-bottom: .4em;
+    padding: .25em;
+    border: 2px solid;
+    border-radius: .5rem;
+}
+
+/* --- Optional color msg --- */
+small {
+    font-size: .7rem;
+    max-height: 0;
+    overflow: hidden;
+    
+    transition: max-height .45s;
+}
+
+.show-msg {
+    max-height: 70px;
+}
+
+/* --- "Random" Word --- */
+.random {
+    display: inline-flex;
+}
+
+/* --- Letters --- */
+.r {
+    color: #90979f;
+}
+.a {
+    color: #fcaa16;
+}
+.n {
+    color: #f06594;
+}
+.d {
+    color: #df7654;
+}
+.o {
+    color: #1f2831;
+}
+.m {
+    color: #123abc;
+}
+
+.addition button {
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #777;
+    padding: .3em .6em;
+    margin-top: .25em;
+    border: none;
+    border-radius: .6rem;
+    
+    align-self: center;
+    
+    transition-property: box-shadow, background-color;
+    transition-duration: .3s;
+}
+
+form:invalid button:hover {
+    cursor: not-allowed;
+}
+
+form:valid button:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, .2);
+}
+
+::placeholder {
+    color: inherit;
+    opacity: .55;
+}
+
+/* ==============================================
+    Media Queries
+================================================= */
+/* --- Font Size --- */
+@media (min-width: 509px) {
+    html {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 839px) {
+    html {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 638px) {
+    html {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- Row Layout --- */
+@media (min-width: 638px) {
+    body {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-content: flex-start;
+    }
+    
+    section.selection-list {
+        width: 100%;
+        margin-bottom: 2em;
+    }
+    
+    section.selected,
+    section.addition {
+        width: 50%;
+    }
+    
+    .selected img {
+        max-width: 20rem;
+        max-height: 16rem;
+    }
+}
+
+/* --- Minor Breakpoints & Max Width --- */
+@media (min-width: 920px) {
+    .addition form {
+        padding: .7em;
+    }
+    .addition input {
+        font-size: .8rem;
+        margin-bottom: .5em;
+    }
+    .addition button {
+        font-size: 1rem;
+    }
+    
+    /* --- Max Width --- */
+    body {
+        max-width: 920px;
+        margin: 0 auto;
+    }
+    
+    /* --- Full-width list background --- */
+/*
+    .selection-list {
+        margin-left: calc(-100vw / 2 + 920px / 2);
+        margin-right: calc(-100vw / 2 + 920px / 2);
+    }
+*/
+}
