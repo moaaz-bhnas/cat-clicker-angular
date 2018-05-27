@@ -159,7 +159,6 @@ catApp.controller('catAppController', ['$scope', '$timeout', '$http', function($
     
     /* Show Image Message --- */
     $scope.showImgMsg = function() {
-        console.log('test');
         $scope.imgMsgVisible = true;
     }
     
